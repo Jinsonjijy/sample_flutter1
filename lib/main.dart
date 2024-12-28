@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:testing_app/screen_home.dart';
+import 'package:testing_app/screen_two.dart';
 
 void main(){
   runApp(Myapp());
@@ -10,32 +12,20 @@ class Myapp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch:Colors.indigo
+        primarySwatch:Colors.cyan
       ),
-      home: homescreen(),
+      home: ScreenHome(),
+      // routes: {
+      //   'screen_1':(context){
+      //     return ScreenHome();
+      //   },
+      //   'screen_2':(context){
+      //     return ScreenTwo();
+      //   }
+      // }
     );
   }
 }
-class homescreen extends StatelessWidget {
-  const homescreen({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        padding: EdgeInsets.all(50),
-        child: Column(
-          children: [
-            Text('hello',style: TextStyle(fontSize: 60),),
-            TextField(
-              decoration: InputDecoration(
-                labelText: 'enter name'
-              ),
-            ),
-            ElevatedButton(onPressed: (){}, child: Text('click me'),style: ButtonStyle(backgroundColor:),)
-          ],
-        ),
-      ),
-    );
-  }
-}
+
+
